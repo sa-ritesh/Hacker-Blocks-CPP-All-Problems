@@ -1,0 +1,22 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int tc;
+    cin>>tc;
+    while(tc--)
+    {
+        int n;
+        cin>>n;
+        int p=1;
+        int ans=0;
+        while(n>0)
+        {
+            int ld=n%10;
+            ans+=(ld*p);
+            p*=2;
+            n/=10;
+        }
+        cout<<ans<<endl;
+    }
+}
