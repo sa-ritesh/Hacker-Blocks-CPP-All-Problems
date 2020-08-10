@@ -1,0 +1,78 @@
+#include<iostream>
+#include<math.h>
+using namespace std;
+bool isDecreasing(int*arr,int n)
+{
+    for(int i=0; i<n-1; i++)
+    {
+        if(arr[i]>arr[i+1])
+        {
+            continue;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    return true;
+}
+bool isIncreasing(int*arr,int n)
+{
+    for(int i=0; i<n-1; i++)
+    {
+        if(arr[i]<arr[i+1])
+        {
+            continue;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    return true;
+}
+int main()
+{
+    int n;
+    cin>>n;
+    int breakPoint;
+    int arr[n];
+    for(int i=0; i<n; i++)
+    {
+        cin>>arr[i];
+    }
+    bool inc=isIncreasing(arr,n);
+    bool dec=isDecreasing(arr,n);
+    if(inc==true || dec==true)
+    {
+        cout<<"true";
+        exit(0);
+    }
+    else
+    {
+        for(int i=0; i<n-1; i++)
+        {
+            if(arr[i]>arr[i+1])
+            {
+                continue;
+            }
+            else
+            {
+                breakPoint=i;
+                for(int j=i; j<n-1; j++)
+                {
+                    if(arr[j]<arr[j+1])
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        cout<<"false";
+                        exit(0);
+                    }
+                }
+            }
+        }
+    }
+    cout<<"true";
+}
