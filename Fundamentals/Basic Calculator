@@ -1,0 +1,35 @@
+#include<iostream>
+using namespace std;
+int main(){
+int flag=0, n1, n2;
+char ch;
+while(flag!=1){
+    cin>>ch;
+    if(ch=='+'){
+        cin>>n1>>n2;
+        cout<<n1+n2<<endl;
+    }
+    else if(ch=='-'){
+        cin>>n1>>n2;
+        cout<<n1-n2<<endl;
+    }
+    else if(ch=='*'){
+        cin>>n1>>n2;
+        cout<<n1*n2<<endl;
+    }
+    else if(ch=='/'){
+        cin>>n1>>n2;
+        cout<<n1/n2<<endl;
+    }
+    else if(ch=='%'){
+        cin>>n1>>n2;
+        cout<<n1%n2<<endl;
+    }
+    else if(ch=='x' || ch=='X'){
+    break;
+    }
+    else{
+        cout<<"Invalid operation. Try again."<<endl;
+    }
+}
+}
