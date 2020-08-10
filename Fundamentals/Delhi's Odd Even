@@ -1,0 +1,36 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int tc;
+    cin>>tc;
+    while(tc--)
+    {
+        int n;
+        cin>>n;
+        int even, odd=0;
+        while(n>0)
+        {
+            int ld=n%10;
+
+            if(ld%2==0)
+            {
+                even+=ld;
+            }
+
+            else
+            {
+                odd+=ld;
+            }
+            n/=10;
+        }
+        if(even%4==0 || odd%3==0)
+        {
+            cout<<"Yes"<<endl;
+        }
+        else
+        {
+            cout<<"No"<<endl;
+        }
+    }
+}
