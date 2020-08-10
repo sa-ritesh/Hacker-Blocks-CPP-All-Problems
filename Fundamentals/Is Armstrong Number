@@ -1,0 +1,31 @@
+#include<iostream>
+#include<math.h>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    int p=n;
+    int c=n;
+    int count=0;
+    while(p>0)
+    {
+        count++;
+        p/=10;
+    }
+    int sum=0;
+    while(c>0)
+    {
+        int ld=c%10;
+        sum+=(pow(ld,count));
+        c/=10;
+    }
+    if(sum==n)
+    {
+        cout<<"true";
+    }
+    else
+    {
+        cout<<"false";
+    }
+}
