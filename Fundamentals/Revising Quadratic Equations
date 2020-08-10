@@ -1,0 +1,29 @@
+#include<iostream>
+#include<vector>
+#include<algorithm>
+#include<math.h>
+using namespace std;
+int main()
+{
+    int a, b, c;
+    cin>>a>>b>>c;
+    int d=(b*b)-(4*a*c);
+    if(d<0)
+    {
+        cout<<"Imaginary";
+    }
+    else if(d==0)
+    {
+        int x1=((-b)+(pow(d,1/2)))/2*a;
+        cout<<"Real and Equal"<<endl;
+        cout<<x1<<" "<<x1;
+
+    }
+    else
+    {
+        int x1=((-b)+(pow(d,0.5)))/2*a;
+        int x2=((-b)-(pow(d,0.5)))/2*a;
+        cout<<"Real and Distinct"<<endl;
+        cout<<min(x1,x2)<<" "<<max(x1,x2);
+    }
+}
