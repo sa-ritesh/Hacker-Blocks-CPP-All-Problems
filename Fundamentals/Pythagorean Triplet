@@ -1,0 +1,49 @@
+#include<iostream>
+#include<math.h>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    long long int a,b,c;
+    if(n==1 || n==2 || n==0)
+    {
+        cout<<"-1";
+        exit(0);
+    }
+
+    if(n%2==0)
+    {
+        long long int p=n/2;
+        long long int q=1;
+        a= (p+q)*(p-q);
+        b= 2*p*q;
+        c= ((p*p) + (q*q));
+        if((c*c)==(a*a)+(b*b))
+        {
+            cout<<a<<" "<<c;
+        }
+        else
+        {
+            cout<<-1;
+        }
+
+    }
+    else
+    {
+        long long int p=((n+1)/2);
+        long long int q=((n-1)/2);
+        a= (p+q)*(p-q);
+        b= 2*p*q;
+        c= ((p*p) + (q*q));
+        if((c*c)==(a*a)+(b*b))
+        {
+            cout<<b<<" "<<c;
+        }
+        else
+        {
+            cout<<-1;
+        }
+    }
+
+}
