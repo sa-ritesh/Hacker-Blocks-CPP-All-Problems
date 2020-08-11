@@ -1,0 +1,54 @@
+#include<iostream>
+using namespace std;
+int main() {
+    int n;
+    cin >> n;
+    int f = (n / 2) + 1;
+    int d = f - 1;
+    int space = 1;
+    for (int i = f; i >= 1; i--) {
+        for (int j = 1; j <= i; j++) {
+            cout << "*" << " ";
+        }
+        if (i < f) {
+            for (int j = 1; j <= space; j++) {
+                cout << "  ";
+            }
+            space += 2;
+            for (int j = 1; j <= i; j++) {
+                cout << "*" << " ";
+            }
+        }
+        if (i == f) {
+            for (int j = 1; j <= (n / 2); j++) {
+                cout << "*" << " ";
+            }
+        }
+        cout << endl;
+    }
+    space -= 4;
+    for (int i = 1; i <= d; i++) {
+        for (int j = 1; j <= i + 1; j++) {
+            cout << "*" << " ";
+        }
+        for (int j = 1; j <= space; j++) {
+            cout << "  ";
+        }
+        if (i < d) {
+            for (int j = 1; j <= i + 1; j++) {
+                cout << "*" << " ";
+            }
+        }
+        else {
+
+            for (int j = 1; j <= (n / 2); j++) {
+                cout << "*" << " ";
+
+            }
+        }
+        space -= 2;
+        cout << endl;
+    }
+
+
+}
