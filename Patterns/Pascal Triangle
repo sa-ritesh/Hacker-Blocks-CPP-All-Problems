@@ -1,0 +1,50 @@
+#include<iostream>
+using namespace std;
+int ncr(int n, int r)
+{
+    int sumN = 1, sumR = 1, sumNR = 1;
+    int nr = n - r;
+    for (int i = n; i >= 1; i--)
+    {
+        sumN *= n;
+        n--;
+    }
+    for (int i = r; i >= 1; i--)
+    {
+        sumR *= r;
+        r--;
+    }
+    for (int i = nr; i >= 1; i--)
+    {
+        sumNR *= (nr);
+        (nr)--;
+    }
+    int ans = sumN / (sumR * sumNR);
+    return ans;
+}
+int main()
+{
+    int n;
+    cin >> n;
+    int space = n - 1;
+    for (int i = 0; i < n; i++)
+    {
+        int space = 1;
+        for (; space <= n - i; space++) {
+            cout << " ";
+        }
+        if (i == 0)
+        {
+            cout << 1;
+        }
+        else
+        {
+            for (int j = 0; j <= i; j++)
+            {
+                cout << ncr(i, j) << " ";
+            }
+        }
+        cout << endl;
+        space--;
+    }
+}
