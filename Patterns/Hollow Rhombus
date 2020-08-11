@@ -1,0 +1,52 @@
+#include<iostream>
+using namespace std;
+int ncr(int n, int r)
+{
+    int sumN = 1, sumR = 1, sumNR = 1;
+    int nr = n - r;
+    for (int i = n; i >= 1; i--)
+    {
+        sumN *= n;
+        n--;
+    }
+    for (int i = r; i >= 1; i--)
+    {
+        sumR *= r;
+        r--;
+    }
+    for (int i = nr; i >= 1; i--)
+    {
+        sumNR *= (nr);
+        (nr)--;
+    }
+    int ans = sumN / (sumR * sumNR);
+    return ans;
+}
+int main()
+{
+    int n;
+    cin >> n;
+    for (int i = 1; i <= n; i++)
+    {
+        for (int j = 1; j <= n - i; j++) {
+            cout << " ";
+        }
+        if (i == 1 || i == n) {
+            for (int j = 1; j <= n; j++) {
+                cout << "*";
+            }
+        }
+        else {
+            for (int j = 1; j <= n; j++) {
+                if (j == 1 || j == n) {
+                    cout << "*";
+                }
+                else {
+                    cout << " ";
+                }
+            }
+        }
+        cout << endl;
+
+    }
+}
