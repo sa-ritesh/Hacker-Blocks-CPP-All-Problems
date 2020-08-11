@@ -1,0 +1,52 @@
+#include<iostream>
+using namespace std;
+int main(){
+int n;
+cin>>n;
+int space=(n*2)-2;
+int mSpace=1;
+for(int i=1;i<=n;i++){
+        for(int k=1;k<=space;k++){
+            cout<<"  ";
+        }
+        for(int j=i;j>=1;j--){
+            cout<<j<<" ";
+        }
+        if(i>1){
+        for(int k=1;k<=mSpace;k++){
+            cout<<"  ";
+        }
+        mSpace+=2;
+        for(int p=1;p<=i;p++){
+            cout<<p<<" ";
+        }
+        }
+
+      space-=2;
+     cout<<endl;
+}
+space+=2;
+mSpace-=2;
+for(int i=n-1;i>=1;i--){
+        for(int k=0;k<=space+1;k++){
+            cout<<"  ";
+        }
+        for(int j=i;j>=1;j--){
+            cout<<j<<" ";
+        }
+        if(i>=1){
+        for(int k=1;k<=mSpace-2;k++){
+            cout<<"  ";
+        }
+        mSpace-=2;
+        if(i>1){
+        for(int p=1;p<=i;p++){
+            cout<<p<<" ";
+        }
+        }
+        }
+
+      space+=2;
+     cout<<endl;
+}
+}
