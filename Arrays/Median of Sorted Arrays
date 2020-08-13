@@ -1,0 +1,22 @@
+#include<iostream>
+#include<algorithm>
+using namespace std;
+int main() {
+    int n, m;
+    cin >> n;
+    m = 2 * n;
+    int arr[m];
+    for (int i = 0; i < m; i++) {
+        cin >> arr[i];
+    }
+    sort(arr, arr + m);
+    cout << endl;
+    if (n % 2 == 0) {
+        int j = (n - 1);
+        cout << arr[j];
+    }
+    else {
+        int i = (m - 1) / 2;
+        cout << arr[i];
+    }
+}
