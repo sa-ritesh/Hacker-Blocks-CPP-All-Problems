@@ -1,0 +1,56 @@
+#include<iostream>
+using namespace std;
+void binarySearch(int n, int *arr,int s,int e, int key)
+{
+    int ans;
+    if(s>e)
+    {
+        cout<<"-1";
+        exit(0);
+        return;
+    }
+    int mid=(s+e)/2;
+    if(arr[mid]==key)
+    {
+        ans=mid;
+        cout<<mid;
+        exit(0);
+    }
+    if(arr[s]<=arr[mid])
+    {
+        if(key>=arr[s] && key<=arr[mid])
+        {
+            binarySearch(n,arr,s,mid-1,key);
+        }
+        else
+        {
+            binarySearch(n,arr,mid+1,e,key);
+        }
+    }
+    else
+    {
+        if(key>=arr[mid] && key<=arr[e])
+        {
+            binarySearch(n,arr,mid+1,e,key);
+        }
+        else
+        {
+            binarySearch(n,arr,s,mid-1,key);
+        }
+    }
+}
+
+int main()
+{
+    int n;
+    cin>>n;
+    int arr[n];
+    for(int i=0; i<n; i++)
+    {
+        cin>>arr[i];
+    }
+    int key;
+    cin>>key;
+    binarySearch(n,arr,0,n-1,key);
+    return 0;
+}
