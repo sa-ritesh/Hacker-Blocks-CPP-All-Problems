@@ -1,0 +1,53 @@
+#include <iostream>
+#include<algorithm>
+#include<bits/stdc++.h>
+using namespace std;
+bool check(int n, int m, int*arr, int mid)
+{
+//1 2 4 8 9
+    int total=1;
+    int last=arr[0];
+    for(int i=1; i<n; i++)
+    {
+        if(arr[i]-last>=mid)
+        {
+            last=arr[i];
+            total++;
+            if(total==m)
+            {
+                return true;
+            }
+        }
+
+    }
+    return false;
+}
+int main()
+{
+    int n,m;
+    cin>>n>>m;
+    int arr[n];
+    for(int i=0; i<n; i++)
+    {
+        cin>>arr[i];
+    }
+    sort(arr,arr+n);
+    int ans=0;
+    int s=0,e=arr[n-1];
+    while(s<=e)
+    {
+        int mid=(s+e)/2;
+        //cout<<"MID=> "<<mid<<endl;
+        if(check(n,m,arr,mid))
+        {
+            //   cout<<"OK->MID "<<mid<<endl;
+            ans=mid;
+            s=mid+1;
+        }
+        else
+        {
+            e=mid-1;
+        }
+    }
+    cout<<ans;
+}
